@@ -52,6 +52,7 @@
             this.btn_submit3 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -264,17 +265,28 @@
             // label7
             // 
             this.label7.Image = global::BayView.Properties.Resources.Bayview_Baptist_Church;
-            this.label7.Location = new System.Drawing.Point(813, 113);
+            this.label7.Location = new System.Drawing.Point(833, 113);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(276, 193);
+            this.label7.Size = new System.Drawing.Size(256, 193);
             this.label7.TabIndex = 11;
             // 
-            // LoginForm
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(418, 221);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(113, 51);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Submit";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1088, 529);
             this.ControlBox = false;
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btn_submit3);
@@ -288,7 +300,7 @@
             this.Controls.Add(this.tb_user);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "LoginForm";
+            this.Name = "Form1";
             this.Text = "BayView Hotel";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
@@ -321,6 +333,7 @@
         private System.Windows.Forms.Button btn_submit3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button2;
     }
 }
 
