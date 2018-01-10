@@ -52,7 +52,6 @@
             this.btn_submit3 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -197,9 +196,9 @@
             // btn_quit
             // 
             this.btn_quit.Image = global::BayView.Properties.Resources.Close_delete_remove_exit_cross_x_button_error;
-            this.btn_quit.Location = new System.Drawing.Point(984, 443);
+            this.btn_quit.Location = new System.Drawing.Point(963, 425);
             this.btn_quit.Name = "btn_quit";
-            this.btn_quit.Size = new System.Drawing.Size(92, 74);
+            this.btn_quit.Size = new System.Drawing.Size(113, 92);
             this.btn_quit.TabIndex = 4;
             this.btn_quit.UseVisualStyleBackColor = true;
             this.btn_quit.Click += new System.EventHandler(this.button2_Click);
@@ -223,6 +222,7 @@
             this.btn_submit1.TabIndex = 6;
             this.btn_submit1.Text = "Submit";
             this.btn_submit1.UseVisualStyleBackColor = true;
+            this.btn_submit1.Click += new System.EventHandler(this.btn_submit1_Click);
             // 
             // btn_cancel1
             // 
@@ -265,20 +265,10 @@
             // label7
             // 
             this.label7.Image = global::BayView.Properties.Resources.Bayview_Baptist_Church;
-            this.label7.Location = new System.Drawing.Point(833, 113);
+            this.label7.Location = new System.Drawing.Point(788, 113);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(256, 193);
+            this.label7.Size = new System.Drawing.Size(301, 193);
             this.label7.TabIndex = 11;
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(418, 221);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(113, 51);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Submit";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -286,7 +276,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1088, 529);
             this.ControlBox = false;
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btn_submit3);
@@ -333,7 +322,6 @@
         private System.Windows.Forms.Button btn_submit3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button2;
     }
 }
 
