@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Data.SQLite;
 
 namespace BayView
 {
@@ -16,12 +17,7 @@ namespace BayView
         {
 
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+  
         private void button1_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -34,7 +30,47 @@ namespace BayView
 
         private void btn_submit1_Click(object sender, EventArgs e)
         {
-                
+            try
+            {
+                using (SQLiteConnection dbcon = new SQLiteConnection())
+                {
+                    dbcon.ConnectionString = database.source;
+                    //we wish to retrieve the password and staff-ID
+                    string sql = "SELECT password, staffId FROM Staff WHERE staffName=@name";
+                    using (SQLiteCommand cmd = new SQLiteCommand(sql, dbcon))
+                    {
+                        //using a user-supplied staff name
+                        cmd.Parameters.AddWithValue("name", tb_user.Text);
+                        dbcon.Open();
+                        using (SQLiteDataReader dr = cmd.ExecuteReader())
+                        {
+                            //if no match to name in Db, throw an exception
+                            if (!dr.HasRows)
+                                throw new Exception();
+                            //if paswords dont match, throw an exception
+                            dr.Read();
+                            if (tb_pass.Text != dr[0].ToString())
+                                throw new Exception();
+                            //OK, the login is valid
+                            stf_id = Convert.ToInt32(dr[1]);  //keep track of current staff member
+                            dbcon.Close();
+                            setlogin(true);  //and set up interface for a logged-in user
+                        }
+                    }
+                }
+            }
+            catch
+            {
+                //if something went wrong, show details
+                MessageBox.Show("Login unsuccessful");
+                tb_user.Focus();
+            }
+            finally
+            {
+                //clear the user input fields
+                tb_user.Clear();
+                tb_pass.Clear();
+            }
         }
     }
 }
