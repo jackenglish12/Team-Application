@@ -70,7 +70,19 @@ namespace BayView
                 //clear the user input fields
                 tb_user.Clear();
                 tb_pass.Clear();
+                Menu frm2 = new Menu();
+                frm2.ShowDialog();
             }
+        }
+
+        private void setlogin(Boolean setas)
+        {
+            //set up the interface for a logged-in (setas=true) or logged-out (setas=false) user
+            btn_submit3.Enabled = setas;
+            btn_logout1.Enabled = setas;
+            btn_submit1.Enabled = !setas;
+            tb_user.Enabled = !setas;
+            tb_pass.Enabled = !setas;
         }
     }
 }
